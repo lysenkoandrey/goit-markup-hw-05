@@ -247,9 +247,9 @@ a.current::after {
     padding-bottom: 94px;
 }
 
-.visually-hidden {
+/* .visually-hidden {
     
-}
+} */
 
 /* SECTION 1 (HERO) */
 .section-hero {
@@ -332,6 +332,24 @@ a.current::after {
 
 .section-three-item {
     flex-basis: calc((100% - 2 * 30px) / 3);
+}
+
+.section-three-card {
+    position: relative;
+}
+.section-three-picture-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    background-color: rgba(47, 48, 58, 0.8);
+    color: var(--text-white-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* SECTION 4 */
@@ -431,12 +449,12 @@ a.current::after {
     justify-content: space-between;
 }
 
-.section-five-item {
-    /* width: 170px;
-    height: 92px; */
-    /* border-radius: 4px;
-    border: 1px solid var(--color-social); */
-}
+/* .section-five-item {
+    width: 170px;
+    height: 92px;
+    border-radius: 4px;
+    border: 1px solid var(--color-social);
+} */
 
 .section-five-item-link {
     display: inline-flex;
@@ -523,6 +541,46 @@ a.current::after {
     outline: 1px solid red;
     margin-bottom: 30px;
 } */
+
+.main-portfolio-card-picture {
+    position: relative;
+}
+
+.test-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    background-color: rgba(33, 150, 243, 0.9);
+    /* transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-portfilio-card-text {
+    width: 322px;
+    /* height: 100%; */
+    /* padding: 63px 24px; */
+    /* bottom: 0; */
+    /* left: 0; */
+    color: var(--text-white-color);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+}
+
+.main-portfolio-card:hover .test-card,
+.main-portfolio-card:focus .test-card {
+    opacity: 1;
+}
 
 .main-portfolio-picture-set {
     flex-basis: calc((100% - 2 * 30px) / 3);
@@ -680,3 +738,52 @@ button {
     color: var(--text-white-color);
 }
 
+/* MODAL */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    background: rgba(0, 0, 0, 0.2);;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 581px;
+    width: 528px;
+    border-radius: 4px;
+    
+    background: var(--bgc-page);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+button.modal-button-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--bgc-page);
+}
+.button-icon-close {
+    fill:#000000
+}
