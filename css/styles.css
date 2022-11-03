@@ -768,6 +768,7 @@ button {
 .backdrop {
     position: fixed;
     opacity: 1;
+    visibility: visible;
     top: 0;
     left: 0;
 
@@ -776,14 +777,12 @@ button {
     
     background: rgba(0, 0, 0, 0.2);
 
-    transition: opacity 2500ms linear;
+    transition: opacity 250ms linear;
 }
 
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-    visibility: hidden;
-
 }
 
 .modal {
